@@ -1,6 +1,21 @@
 import { useState } from "react";
 import copy from "copy-to-clipboard";
 
+
+<nav class="nav">
+<div class="nav-container" style="width: 100%;max-width:100%;padding-left:20px;">
+  <a href="/">
+    <h2 class="nav-title">Download Youtube Thumbnail</h2>
+  </a>
+  <ul style="padding-right:20px;">
+<li class="fontBlack chromeExt"><a href="https://j.mp/2BI4t7d" rel="noopener noreferrer" target="_blank">Find youtube video tags</a><span class="whatsNew">New</span></li>
+<li ><a href="/posts">Posts</a></li>
+<li ><a href="../../posts/privcaypolicy/">Privacy Policy</a></li>
+
+</ul>
+</div>
+</nav>
+
 const Index = () => {
   const [videoURL, setVideoURL] = useState("");
   const [thumbnailOptions, setThumbnailOptions] = useState([]);
@@ -33,15 +48,20 @@ const Index = () => {
     }
   };
 
+
+
   return (
     <div className="container mx-auto px-4 py-8">
       <header className="text-center mb-8">
-        <h1 className="text-3xl font-bold mb-2">
-          Youtube Thumbnail Downloader
+        <h1 className="text-3xl font-bold mb-2" >
+          <center>Youtube Thumbnail Downloader </center>
         </h1>
-        <p className="text-gray-600">
-          Download high-quality thumbnails from YouTube videos.
+      
+        <p className="text-gray-600" >
+        Download youtube and vimeo thumbnail images of all quality for free. This application let you download thumbnails of all quality. Just paste the URL of the thumbnail video in the below input and click Get Thumbnail Image
         </p>
+        
+
       </header>
       <div className="text-center">
         <input
@@ -51,11 +71,11 @@ const Index = () => {
           value={videoURL}
           onChange={(e) => setVideoURL(e.target.value)}
         />
-        <button
+        <button 
           className="btn-blue mt-2"
           onClick={() => getYouTubeThumbnail(videoURL)}
         >
-          Download Thumbnails
+          Download Thumbnails 
         </button>
       </div>
       {thumbnailOptions.length > 0 && (
